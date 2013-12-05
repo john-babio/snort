@@ -55,7 +55,7 @@ sudo mv /etc/rc.local2 /etc/rc.local
 sudo sed 's/#config hostname:   thor/config hostname:   localhost/g' /etc/snort/etc/barnyard2.conf > /etc/snort/etc/barnyard1
 sudo sed 's/#config interface:  eth0/config interface:  eth1/g' /etc/snort/etc/barnyard1 > /etc/snort/etc/barnyard-2
 sudo sed 's/#   output database: log, mysql, user=root password=test dbname=db host=localhost/output database: log, mysql, user=snorby password=test dbname=snorby host=localhost/g' /etc/snort/etc/barnyard-2 > /etc/snort/etc/barnyard3 
-sudo mv /etc/snort/etc/barnyard3 /etc/snort/etc/barnyard.conf
+sudo mv /etc/snort/etc/barnyard3 /etc/snort/etc/barnyard2.conf
 sudo rm /etc/snort/etc/barnyard1
 sudo rm /etc/snort/etc/barnyard-2
 
