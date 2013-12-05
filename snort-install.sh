@@ -25,6 +25,7 @@ sudo groupadd snort
 sudo useradd -g snort snort
 sudo chown snort:snort /var/log/snort
 
+#If the rules file version changes just download them and alter the snortrules-snapshot-29xx.tar.gz
 sudo tar zxvf /tmp/snortrules-snapshot-2955.tar.gz -C /etc/snort
 sudo mkdir /etc/snort/lib/snort_dynamicrules
 sudo cp /etc/snort/so_rules/precompiled/Ubuntu-12-04/x86-64/2.9.5.5/* /etc/snort/lib/snort_dynamicrules
