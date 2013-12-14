@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get -y install wget libpcap0.8-dev libpcre3-dev g++ bison flex make autoconf libtool libmysqlclient-dev
+sudo apt-get -y install wget libpcap0.8-dev libpcre3-dev g++ bison mysql-server flex make autoconf libtool libmysqlclient-dev
 
 wget -O/tmp/snort-2.9.5.6.tar.gz http://www.snort.org/downloads/2665 
 wget -O/tmp/daq-2.0.1.tar.gz http://www.snort.org/downloads/2657
@@ -70,6 +70,7 @@ sudo sed -i 's/config sid_file:            \/etc\/snort\/sid-msg.map/config sid_
 sudo sed -i 's/#config hostname:   thor/config hostname:   localhost/g' /usr/local/snort/etc/barnyard2.conf
 sudo sed -i 's/#config interface:  eth0/config interface:  eth1/g' /usr/local/snort/etc/barnyard2.conf
 sudo sed -i 's/#   output database: log, mysql, user=root password=test dbname=db host=localhost/output database: log, mysql, user=snorby password=test dbname=snorby host=localhost/g' /usr/local/snort/etc/barnyard2.conf
+
 
 
 
