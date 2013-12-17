@@ -25,8 +25,8 @@ sudo groupadd snort
 sudo useradd -g snort snort
 sudo chown snort:snort /var/log/snort
 
-#Add oinkcode here on the line below
-wget http://www.snort.org/reg-rules/snortrules-snapshot.tar.gz/<oinkcode> -O /tmp/snortrules-snapshot.tar.gz
+#Supply Oinkcode
+#http://www.snort.org/reg-rules/snortrules-snapshot-2955.tar.gz/<oinkcode> -O /tmp/snortrules-snapshot-2955.tar.gz
 sudo tar zxvf /tmp/snortrules-snapshot.tar.gz -C /usr/local/snort
 sudo mkdir /usr/local/snort/lib/snort_dynamicrules
 sudo cp /usr/local/snort/so_rules/precompiled/Ubuntu-12-04/x86-64/2.9.5.5/* /usr/local/snort/lib/snort_dynamicrules
