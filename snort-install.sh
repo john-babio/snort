@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get -y install wget libpcap0.8-dev libpcre3-dev g++ bison mysql-server flex make autoconf libtool libmysqlclient-dev
+sudo apt-get -y install wget libpcap0.8-dev git libpcre3-dev g++ bison mysql-server flex make autoconf libtool libmysqlclient-dev
 
 wget -O/tmp/snort-2.9.5.6.tar.gz http://www.snort.org/downloads/2665 
 wget -O/tmp/daq-2.0.1.tar.gz http://www.snort.org/downloads/2657
@@ -27,7 +27,7 @@ sudo chown snort:snort /var/log/snort
 
 #Supply Oinkcode
 #http://www.snort.org/reg-rules/snortrules-snapshot-2955.tar.gz/<oinkcode> -O /tmp/snortrules-snapshot-2955.tar.gz
-sudo tar zxvf /tmp/snortrules-snapshot.tar.gz -C /usr/local/snort
+sudo tar zxvf /tmp/snortrules-snapshot-2955.tar.gz -C /usr/local/snort
 sudo mkdir /usr/local/snort/lib/snort_dynamicrules
 sudo cp /usr/local/snort/so_rules/precompiled/Ubuntu-12-04/x86-64/2.9.5.5/* /usr/local/snort/lib/snort_dynamicrules
 sudo touch /usr/local/snort/rules/white_list.rules
