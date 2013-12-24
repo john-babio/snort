@@ -11,6 +11,12 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+                        <key>match</key>
+                        <string>alert|log|pass|activate|dynamic|drop|reject|sdrop</string>
+                        <key>name</key>
+                        <string>constant.character.snortrules</string>
+                </dict>
+		<dict>
 			<key>match</key>
 			<string>any</string>
 			<key>name</key>
@@ -24,13 +30,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>alert</string>
-			<key>name</key>
-			<string>constant.character.snortrules</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\$HOME_NET|\$EXTERNAL_NET|\$HTTP_SERVERS|\$HTTP_PORTS</string>
+			<string>\$HOME_NET|\$EXTERNAL_NET|\$HTTP_SERVERS|\$HTTP_PORTS|\$SMTP_SERVERS|\$SQL_SERVERS|\$TELNET_SERVERS|\$SSH_SERVERS|\$FTP_SERVERS|\$SIP_SERVERS|\$SHELLCODE_PORTS|\$ORACLE_PORTS|\$SSH_PORTS|\$FTP_PORTS|\$SIP_PORTS|\$FILE_DATA_PORTS|\$GTP_PORTS|\$AIM_SERVERS|</string>
 			<key>name</key>
 			<string>keyword.other.snortrules</string>
 		</dict>
@@ -42,7 +42,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>msg\:|flow\:|content:|fastpattern|metadata|classtype:|sid:</string>
+			<string>msg:|flow:|flowbits:|content:|fastpattern:|metadata:|classtype:|nocase|pcre:|reference:|sid:|gid:|priority|depth:|offset:|byte_test:|within:|distance:|rev:|uricontent:|rawbytes:|byte_jump:|isdataat:|ftpbounce:|asn1:|cvs:|dce_iface:|dce_opnum:|dce_stub_data:|sip_method:|sip_stat_code:|sip_header:|sip_body:|gtp_type:|gtp_info:|gtp_version:|fragoffset:|ttl:|tos:|id:|ipopts:|fragbits:|dsize:|flags:|seq:|ack:|window:|itype:|icode:|icmp_id:|icmp_seq:|rpc:|ip_proto:|sameip:|logto:|session:|resp:|react:|tag:|activates:|activated_by:|count:|replace:|detection_filter:|threshold:</string>
 			<key>name</key>
 			<string>constant.character.snortrules</string>
 		</dict>
