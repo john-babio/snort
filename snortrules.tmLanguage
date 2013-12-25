@@ -46,6 +46,12 @@
 			<key>name</key>
 			<string>constant.character.snortrules</string>
 		</dict>
+		<dict>	
+			<key>match</key>
+			<string>rpc-portmap-decode|shellcode-detect|string-detect|suspicious-filename|suspicious-login|system-call-detect|tcp-connection|trojan-activity|unusual-client-port-connection|network-scan|denial-of-service|non-standard-protocol|protocol-command-decode|web-application-activity|web-application-attack|misc-activity|misc-attack|icmp-event|inappropriate-content|policy-violation|default-login-attempt|sdf|file-format|malware-cnc|client-side-exploit</string>  
+			<key>name</key>
+			<string>string.unquoted.snortrules</string>
+		</dict>
 		<dict>
 			<key>match</key>
 			<string>\d+\.\d+\.\d+\.\d+(/\d{1,2})?</string>
@@ -65,3 +71,4 @@
 	<string>704158e8-8ee3-4297-b0ae-cfd55388ab03</string>
 </dict>
 </plist>
+
