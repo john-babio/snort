@@ -1,23 +1,23 @@
 #!/bin/bash
 sudo apt-get -y install wget libpcap0.8-dev git libpcre3-dev g++ bison mysql-server flex make autoconf libtool libmysqlclient-dev
 
-wget -O/tmp/snort-2.9.5.6.tar.gz http://www.snort.org/downloads/2665 
-wget -O/tmp/daq-2.0.1.tar.gz http://www.snort.org/downloads/2657
+wget -O/tmp/snort-2.9.6.0.tar.gz http://www.snort.org/downloads/2787 
+wget -O/tmp/daq-2.0.2.tar.gz http://www.snort.org/downloads/2778
 wget -O/tmp/libdnet-1.12.tgz http://libdnet.googlecode.com/files/libdnet-1.12.tgz
 
 cd /tmp
-tar -xvf daq-2.0.1.tar.gz
-tar -xvf snort-2.9.5.6.tar.gz
+tar -xvf daq-2.0.2.tar.gz
+tar -xvf snort-2.9.6.0.tar.gz
 tar -xvf libdnet-1.12.tgz
 cd /tmp/libdnet-1.12
 sudo ./configure && sudo make && sudo make install
 
 sudo ln -s /usr/local/lib/libdnet.1.0.1 /usr/lib/libdnet.1
 
-cd /tmp/daq-2.0.1
+cd /tmp/daq-2.0.2
 sudo ./configure && sudo make && sudo make install
 
-cd /tmp/snort-2.9.5.6
+cd /tmp/snort-2.9.6.0
 sudo ./configure --prefix=/usr/local/snort --enable-gre --enable-mpls --enable-targetbased --enable-ppm --enable-perfprofiling --enable-zlib --enable-active-response --enable-normalizer --enable-reload --enable-react --enable-flexresp3 && sudo make && sudo make install
 sudo mkdir /var/log/snort
 sudo mkdir /var/snort
@@ -27,9 +27,9 @@ sudo chown snort:snort /var/log/snort
 
 #Supply Oinkcode
 #http://www.snort.org/reg-rules/snortrules-snapshot-2955.tar.gz/<oinkcode> -O /tmp/snortrules-snapshot-2955.tar.gz
-sudo tar zxvf /tmp/snortrules-snapshot-2955.tar.gz -C /usr/local/snort
+sudo tar zxvf /tmp/snortrules-snapshot-2960.tar.gz -C /usr/local/snort
 sudo mkdir /usr/local/snort/lib/snort_dynamicrules
-sudo cp /usr/local/snort/so_rules/precompiled/Ubuntu-12-04/x86-64/2.9.5.5/* /usr/local/snort/lib/snort_dynamicrules
+sudo cp /usr/local/snort/so_rules/precompiled/Ubuntu-12-04/x86-64/2.9.6.0/* /usr/local/snort/lib/snort_dynamicrules
 sudo touch /usr/local/snort/rules/white_list.rules
 sudo touch /usr/local/snort/rules/black_list.rules
 sudo ldconfig
@@ -70,6 +70,7 @@ sudo sed -i 's/config sid_file:            \/etc\/snort\/sid-msg.map/config sid_
 sudo sed -i 's/#config hostname:   thor/config hostname:   localhost/g' /usr/local/snort/etc/barnyard2.conf
 sudo sed -i 's/#config interface:  eth0/config interface:  eth1/g' /usr/local/snort/etc/barnyard2.conf
 sudo sed -i 's/#   output database: log, mysql, user=root password=test dbname=db host=localhost/output database: log, mysql, user=snorby password=test dbname=snorby host=localhost/g' /usr/local/snort/etc/barnyard2.conf
+
 
 
 
