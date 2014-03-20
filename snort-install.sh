@@ -25,6 +25,8 @@ sudo groupadd snort
 sudo useradd -g snort snort
 sudo chown snort:snort /var/log/snort
 
+
+#download the latest registered users ruleset from snort.org
 #Supply Oinkcode
 #http://www.snort.org/reg-rules/snortrules-snapshot-2955.tar.gz/<oinkcode> -O /tmp/snortrules-snapshot-2955.tar.gz
 sudo tar zxvf /tmp/snortrules-snapshot-2960.tar.gz -C /usr/local/snort
