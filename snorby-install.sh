@@ -1,5 +1,6 @@
 #!/bin/bash
 # Edit line 16 for snorby database password
+# The snorby.conf was added because apache2 on ubuntu14.04 has the .conf extension now.
 
 apt-get install apache2 libyaml-dev git-core default-jre imagemagick libmagickwand-dev wkhtmltopdf gcc g++ build-essential libssl-dev libreadline-gplv2-dev zlib1g-dev linux-headers-generic libsqlite3-dev libxslt1-dev libxml2-dev libmysqlclient-dev libmysql++-dev apache2-prefork-dev libcurl4-openssl-dev ruby1.9.3 ruby-text-format -y
 gem install bundler 
