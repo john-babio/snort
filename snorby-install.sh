@@ -37,7 +37,7 @@ echo "           Options -MultiViews" >> /etc/apache2/sites-available/snorby.con
 echo "   </Directory>" >> /etc/apache2/sites-available/snorby.conf
 echo "</VirtualHost>" >> /etc/apache2/sites-available/snorby.conf
 
-a2dissite default
+a2dissite 000-default.conf
 a2ensite snorby.conf
 service apache2 reload
  
