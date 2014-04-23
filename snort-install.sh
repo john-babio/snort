@@ -104,6 +104,7 @@ sudo sed -i 's/#include $RULE_PATH\/classification.config/include classification
 sudo sed -i 's/#include $RULE_PATH\/reference.config/include reference.config/g' /usr/local/snort/etc/emerging.conf
 sudo sed -i 's/#var SSH_PORTS 22/var SSH_PORTS 22/g' /usr/local/snort/etc/emerging.conf
 sudo echo "config classification: sdf,Sensitive Data,2" >> /usr/local/snort/etc/classification.config
+sudo perl /usr/local/snort/pulledpork/pulledpork.pl -c /usr/local/snort/pulledpork/etc/pulledpork.conf
 
 
 
