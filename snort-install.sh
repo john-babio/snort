@@ -49,6 +49,7 @@ sudo touch /usr/local/snort/rules/local.rules
 sudo ldconfig
 
 sudo cpan Crypt::SSLeay
+sudo cpan Switch
 
 cp -r /tmp/pulledpork-0.6.1 /usr/local/snort/pulledpork
 
